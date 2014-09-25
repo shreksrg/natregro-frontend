@@ -34,11 +34,11 @@ CView::show('layout/footer');
 <script>
     $('.prev,.next').click(function () {
         var _this = $(this);
-        $.get('<?=APP_URL?>/news/search?do=' + _this.attr('class'), {id:<?=$news['id']?>}, function (r) {
+        $.get('<?=APP_URL?>/news/turns?t=<?=$type?>&do=' + _this.attr('class'), {id:<?=$news['id']?>}, function (r) {
             if (r.code == 0) {
                 var id = r.data;
                 if (id > 0)
-                    location.href = _this.attr('href') + '?id=' + r.data;
+                    location.href = _this.attr('href') + '?t=<?=$type?>&id=' + r.data;
             }
         }, 'json')
         return false;

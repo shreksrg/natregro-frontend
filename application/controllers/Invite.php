@@ -15,13 +15,10 @@ class Invite extends FrontController
     public function active()
     {
         $route = $this->input->get('r');
-        if ($route == 'list') {
-            CView::show('invite/active_list');
+        $actArr=array('list','show');
+        if(in_array($route,$actArr)){
+            CView::show('invite/active_'.$actArr[$route]);
         }
-        if ($route == 'show') {
-            CView::show('invite/active_detail');
-        }
-
     }
 
     public function contact()
