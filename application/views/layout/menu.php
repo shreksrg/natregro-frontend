@@ -1,7 +1,7 @@
 <div class="header">
     <a class="logo" href="<?= APP_URL ?>" target="_self"></a>
     <ul id="nav">
-        <li class="nav1"><a href="<?= APP_URL ?>/news/brand">品牌故事</a>
+        <li class="nav1"><a href="<?= APP_URL ?>/news/brands?tag=story">品牌故事</a>
         </li>
         <li class="nav2"><a href="#">关于明康</a>
             <ul class="children">
@@ -30,8 +30,8 @@
                 <li><a href="<?= APP_URL ?>/news/chain?tag=10">实体门店</a></li>
             </ul>
         </li>
-        <li class="nav5"><a href="hr_jobs.html">招贤纳士</a></li>
-        <li class="nav6"><a href="exposure_etc.html">诚信曝光</a></li>
+        <li class="nav5"><a href="<?= APP_URL ?>/invite">招贤纳士</a></li>
+        <li class="nav6"><a href="<?= APP_URL ?>/news/exposure?r=self">诚信曝光</a></li>
     </ul>
     <div class="zs"></div>
 </div>

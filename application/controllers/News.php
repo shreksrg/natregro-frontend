@@ -22,7 +22,7 @@ class News extends FrontController
 
     public function search()
     {
-        $actArr = array('prev'=>'>', 'next'=>'<');
+        $actArr = array('prev' => '>', 'next' => '<');
         $id = (int)$this->input->get('id');
         $action = $this->input->get('do');
         if (isset($actArr[$action])) {
@@ -96,5 +96,29 @@ class News extends FrontController
         CView::show('news/chain', array('tag' => $tag));
     }
 
+    /**
+     * 诚信曝光
+     */
+    public function exposure()
+    {
+        $route = $this->input->get('r');
+        $tagArr = array('self' => 2, 'line' => 1, 'feed' => 0);
+        if (isset($tagArr[$route])) {
+            $view = $route == 'feed' ? 'form' : 'index';
+            CView::show("exposure/$view", array('selIndex' => $tagArr[$route]));
+        }
+    }
 
+    /**
+     * sns连接
+     */
+    public function sns()
+    {
+        $route = $this->input->get('r');
+        $tagArr = array('wx' => 0, 'wb' => 1, 'app' => 2);
+        if (isset($tagArr[$route])) {
+            $view = $route == 'feed' ? 'form' : 'index';
+            CView::show("sns/index", array('route' => $route, 'selIndex' => $tagArr[$route]));
+        }
+    }
 }
