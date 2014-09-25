@@ -1,0 +1,93 @@
+/*------------------------------------------------------------------------
+ * Copyright (c) 2014 hailiang All rights reserved. by Jackal
+------------------------------------------------------------------------*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+body { background:#007939 url(../img/bg.png) ; color:#fff; font:12px/1.5 '微软雅黑' }
+body>a { display: none }
+.page { position: absolute; top: 0; left: 0; right: 0; bottom: 0 }
+.hide { display: none }
+#loading { display: block; font-size: 30px; line-height: 500px; text-align: center; color: #fff }
+#index{width:100%; background:url(../img/girl.png) no-repeat;}
+#index h1 {width:50%;height:67px; text-align: center; font-size: 30px; margin:5% auto 0; display:block;background:url(../img/title.png) no-repeat;background-origin:content;background-position:50%50%;background-size:contain;}
+#index .btns {position:absolute; text-align: center; height: 50px; width: 100%;bottom:10%}
+#room header { position: absolute; top: 2.5%; left: 0; width: 100% ;overflow:hidden; font-size:25px;text-align: center;}
+#room header .lv { width: 30%; height: 60px;float:left;display:block;padding:0;}
+#room header .lvtype {width:30%;height: 35px;float:right;display:block;line-height:50px;}
+#room header .lv em { font-style: normal ; color: #f5ff53;line-height:50px;}
+#room header .btn-pause { width:20%;margin:5px 10px 0 0; height: 35px;float:right;background:#fdffc4;display:block;border:2px #6a3903 solid;border-radius: 10px;color:#6a3903;line-height:35px;font-weight: 700 }
+#room header .time { width: 40%; height: 50px;line-height:50px;float:left;display:block ; color: #fff;font-size:50px;}
+#room header .time.danger { color: #FF0505; }
+#room footer  { position: absolute;width:100%;height:83px;left:0;bottom:0;background:url(../img/tips.png) no-repeat;overflow:hidden;background-size:100% 100%}
+#room footer .magnifier { background:url(../img/magnifier.png) no-repeat;width:78px;height:83px; margin-left:72%; opacity:1;-webkit-transition: all .5s ease-in 0s; margin-top:15px;}
+#room footer .magnifier.shine {-webkit-animation: shine1 1s linear 10s infinite backwards;}
+@-webkit-keyframes shine1 {
+	0% {-webkit-transform:scale(1)}
+	30% {-webkit-transform:scale(1.2)}
+	100%{-webkit-transform:scale(1)}
+}
+
+#room footer .magnifier.dismis {opacity:0;margin-left:100%}
+
+#help {position: absolute;left: 0; width:80%;bottom:16%;left:50%;margin-left:-45%;padding:5%;font-size: 16px; color: #fff; text-align: left;background-color:rgba(0,0,0,0.4); border-radius: 10px }
+#help span{clear:both;color:#f5ff53 }
+#box { position: absolute; top: 15%; right: 0; bottom: 0; left: 0; margin: auto; margin:0 5% }
+#box span { display: block; float: left;  cursor: pointer; border: 1px solid #007939; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box }
+#box span div{width:100%;height:100%;background:url(../img/magnifier.png) no-repeat;background-size:100% 100%;-webkit-animation: finding1 1s linear 1s 1 forwards;opacity:0;}
+@-webkit-keyframes finding1 {
+	0% {opacity:0;-webkit-transform:scale(1)}
+	30% {opacity:1;-webkit-transform:scale(1.2)}
+	100%{opacity:0;-webkit-transform:scale(1)}
+}
+
+#box.lv3 span { width: 31.8%; height: 31.8% }
+#box.lv4 span { width: 23.8%; height: 23.8% }
+
+#right_button{width:100%;height:100%;}
+
+#dialog {height: 100%; background:#007939 url(../img/bg.png); padding-top: 0; box-sizing: border-box; -webkit-box-sizing: border-box }
+#dialog .inner {  width: 100%; text-align: center; color: #fff;margin-top:15% }
+#dialog .inner h3 { line-height: 60px; font-size: 40px; margin: 0; clear:both;color: #f5ff53}
+#dialog .inner h2{margin-top:10px;font-size:20px;}
+#dialog .inner .btn { margin: 15px auto }
+#dialog .inner p { margin: 0 }
+#dialog .inner-content { width: 100%; }
+.btn { background:#fdffc4;border:2px #6a3903 solid;border-radius: 10px;color: #6b4225; cursor: pointer; display: inline-block; margin: 0; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; position: relative; font-size: 20px;width: 184px;height:46px;line-height: 40px;-webkit-tap-highlight-color: transparent ;}
+.btn.btn-bottom { position: absolute; width: 300px; padding: 0; bottom: 20px; left: 50%; margin-left: -150px }
+.boyaa-logo { display: block; width: 100px;height: 100px;  margin: 10px auto 20px; border:1px solid #015d2c;border-radius:10px;background:url(../img/san.jpg) no-repeat;background-size:100%;}
+.boyaa-logo img{width:100%;height:auto;}
+.star{width:172px;height:80px;-webkit-animation: star1 1s steps(10, start) 0ms 1 normal backwards;background:url(../img/star.png) no-repeat;top:0;position: absolute;}
+@-webkit-keyframes star1 {
+	0% {background-position: 0 0}
+	100% {background-position: -1720px 0}
+}
+.banner { width: 640px; background-color: #123; max-width: 100%; position: absolute; bottom: 0; left: 0; display: none }
+.banner img { display: block; max-width: 100% }
+
+#windowalert{display:none;width:100%;height:100%;line-height:100%;font-size:100px;color:#333}
+}
+
+@media only screen and (min-width: 481px) {
+	*{display:none}
+#windowalert{display:block;width:100%;height:100%;line-height:100%;font-size:100px;color:#333}
+}
+
+@media all and (orientation:landscape) {
+#box { top: 0; left: 80px }
+}
+
+@media all and (max-width:361px) {
+#box.lv1 span, #box.lv2 span, #box.lv3 span, #box.lv4 span { border-width: 2px; border-radius: 5px }
+#box.lv5 span, #box.lv6 span, #box.lv7 span, #box.lv8 span, #box.lv9 span { border-width: 1px; border-radius: 3px }
+}
+.btn-boyaa { text-decoration: none }
+.btn-boyaa img { height: 30px; width: 30px; vertical-align: middle; margin-left: 10px }
+
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */
+#box{top: 20%}
+#room header{top:4%}
+#index .girl {top:22%}
+}
