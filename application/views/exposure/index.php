@@ -5,7 +5,7 @@ CView::show('layout/header', $header);
 
 <style>
     body {
-        background: url(/public/img/exposurebg.jpg) no-repeat center 0;
+        background: url(<?=WEB_PATH?>/public/img/exposurebg.jpg) no-repeat center 0;
         background-size: 2000px 1000px;
     }
 </style>
@@ -29,19 +29,19 @@ CView::show('layout/header', $header);
     </div>
     <div class="middle_silder">
         <!--<ul>
-            <li><img src="/public/img/silderbar.png" alt=""/><p><span>海亮集团连续10年入围中国企业500强</span>排名跃… 2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></li>
+            <li><img src="<?=WEB_PATH?>/public/img/silderbar.png" alt=""/><p><span>海亮集团连续10年入围中国企业500强</span>排名跃… 2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></li>
         </ul>-->
         <div class="container" id="idTransformView2">
             <ul class="slider" id="idSlider2">
-                <li><a href="#"><img src="/public/img/silderbar.png"/>
+                <li><a href="#"><img src="<?=WEB_PATH?>/public/img/silderbar.png"/>
 
                         <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
                 </li>
-                <li><a href="#"><img src="/public/img/silderbar.png"/>
+                <li><a href="#"><img src="<?=WEB_PATH?>/public/img/silderbar.png"/>
 
                         <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
                 </li>
-                <li><a href="#"><img src="/public/img/silderbar.png"/>
+                <li><a href="#"><img src="<?=WEB_PATH?>/public/img/silderbar.png"/>
 
                         <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
                 </li>

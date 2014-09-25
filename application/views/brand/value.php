@@ -4,7 +4,7 @@ CView::show('layout/header', $header);
 ?>
 
 <style>
-    body{background:url(/public/img/bg_brand.jpg) no-repeat center 0; background-size:2000px 1000px; }
+    body{background:url(<?=WEB_PATH?>/public/img/bg_brand.jpg) no-repeat center 0; background-size:2000px 1000px; }
 </style>
 <script>
     $(function(){
@@ -22,7 +22,7 @@ CView::show('layout/header', $header);
         <h2>品牌价值</h2><p>您的笑容与幸福，将是我们不懈的追求！</p>
     </div>
     <div class="middle_txt">
-        <img src="/public/img/brand_31.jpg" alt=""/>
+        <img src="<?=WEB_PATH?>/public/img/brand_31.jpg" alt=""/>
         <h3>创造更多健康与美味<br />
             让消费者绽放发自内心的笑容与幸福</h3>
 

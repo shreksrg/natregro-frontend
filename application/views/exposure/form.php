@@ -5,7 +5,7 @@ CView::show('layout/header', $header);
 
 <style>
     body {
-        background: url(/public/img/exposurebg.jpg) no-repeat center 0;
+        background: url(<?=WEB_PATH?>/public/img/exposurebg.jpg) no-repeat center 0;
         background-size: 2000px 1000px;
     }
 </style>
@@ -49,8 +49,8 @@ CView::show('layout/header', $header);
             </tr>
             <tr>
                 <td height="50">&nbsp;</td>
-                <td><a href="#"><img src="/public/img/btn_feedback_submit.png" width="119" height="40" alt=""/></a>
-                    &nbsp;<a href="#"><img src="/public/img/btn_feedback_cancel.png" width="119" height="40" alt=""/></a></td>
+                <td><a href="#"><img src="<?=WEB_PATH?>/public/img/btn_feedback_submit.png" width="119" height="40" alt=""/></a>
+                    &nbsp;<a href="#"><img src="<?=WEB_PATH?>/public/img/btn_feedback_cancel.png" width="119" height="40" alt=""/></a></td>
                 <td colspan="2" class="feedback_tip">您可以选择通过上方表单在线提交您的投诉/曝光信息；<br/>
                     您也可以拨打我们的诚信热线：<span>400-800-4878</span></td>
             </tr>

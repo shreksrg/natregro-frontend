@@ -35,13 +35,13 @@ CView::show('layout/header', $header);
             $(this).addClass("cur");
             $(".menu_cont_box").css("display", "none")
             $("#" + $(this).attr("class").substring(0, 5) + "box").css("display", "block")
-            $("body").css("background", "url(/public/img/bg_" + $(this).attr("class").substring(0, 5) + "box.jpg) no-repeat right center fixed")
+            $("body").css("background", "url(<?=WEB_PATH?>/public/img/bg_" + $(this).attr("class").substring(0, 5) + "box.jpg) no-repeat right center fixed")
         });
     });
 </script>
 <style>
     body {
-        background: url(/public/img/bg_list1box.jpg) no-repeat right center fixed;
+        background: url(<?=WEB_PATH?>/public/img/bg_list1box.jpg) no-repeat right center fixed;
     }
 </style>
 <body>
@@ -54,7 +54,7 @@ CView::show('layout/header', $header);
 <div id="list1box" class="menu_cont_box">
     <h1>海亮集团</h1>
 
-    <div class="pic"><img src="/public/img/menu_cont_box_pic1.jpg" alt=""/></div>
+    <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic1.jpg" alt=""/></div>
     <div class="dec">
         <p>
             海亮集团创建于1989年，经过24年的发展，逐步确立了以有色金属、地产建设、农业食品、环境保护、基础教育为主体，涉足金融、物流等领域，多元并进、专业化发展的经营格局，成为拥有员工1.2万余人的综合性特大型国际化民营企业集团，旗下拥有浙江海亮股份有限公司（股票代码：002203）和四川金顶（集团)股份有限公司（股票代码：600678）等三家境内外上市公司。</p>
@@ -119,7 +119,7 @@ CView::show('layout/header', $header);
 
         <p>为了践行诚信，集团自建质量、诚信曝光台，贯穿整个产业链。产品质量安全问题，内部诚信问题，明康汇自己首先曝光，并实施严格的责任问究，不让任何一个非安全健康食品流入大众餐桌。</p>
 
-        <div class="pic"><img src="/public/img/menu_cont_box_pic_21.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_21.jpg" alt=""/></div>
     </div>
     <h3>奉献安全美味，共创品质生活</h3>
 
@@ -136,7 +136,7 @@ CView::show('layout/header', $header);
 
         <p>从选地、选种，到种植、养殖；从原料加工到物流配送，从品牌推广到食品销售，形成安全、营养、美味的食品供应全过程。每个自营产品，都由富于责任心的海亮人亲力亲为，力争每个环节都能掌控，每个细节都做到完美。</p>
 
-        <div class="pic"><img src="/public/img/menu_cont_box_pic_22.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_22.jpg" alt=""/></div>
     </div>
     <h3>商品品质——层层把控，产品更卓越</h3>
 
@@ -163,7 +163,7 @@ CView::show('layout/header', $header);
     <div class="dec">
         <p>明康汇建设“全程记录、透明可视、主动公开”的可追溯的信息化管理体系，用诚意与行动获得消费者的信任。通过二维码、网站等多种方式，让消费者了解美味的诞生历程，使其买得放心，吃得安心。</p>
 
-        <div class="pic"><img src="/public/img/menu_cont_box_pic_24.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_24.jpg" alt=""/></div>
     </div>
     <h3>宏图伟业——布局全国，决胜未来</h3>
 
@@ -184,7 +184,7 @@ CView::show('layout/header', $header);
 
 </div>
 <div id="list3box" class="menu_cont_box"
-     style="background:#fff url(/public/img/menu_cont_box_pic_bg31.jpg) center bottom no-repeat;">
+     style="background:#fff url(<?=WEB_PATH?>/public/img/menu_cont_box_pic_bg31.jpg) center bottom no-repeat;">
     <h1>海亮生态农业有限公司</h1>
 
     <div class="dec">
@@ -219,20 +219,20 @@ CView::show('layout/header', $header);
             据统计，截至目前，海亮已累计为社会各类慈善公益事业捐赠达3亿多元。 </p>
 
         <div class="listbox_pictxt" style="margin-top:40px;">
-            <img src="/public/img/menu_cont_box_pic_41.jpg" alt=""/>
+            <img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_41.jpg" alt=""/>
             <h4>浙江海亮慈善基金会</h4>
 
             <p>善行天下。长期以来，海亮一直热衷慈善公益事业。2007年8月25日，经浙江省民政厅批准，浙江省首批非公募基金会——浙江海亮慈善基金会正式成立。
                 截至目前，浙江海亮慈善基金会共有基金7600万元，由海亮集团独家全额捐赠。</p>
         </div>
         <div class="listbox_pictxt">
-            <img src="/public/img/menu_cont_box_pic_42.jpg" alt=""/>
+            <img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_42.jpg" alt=""/>
             <h4>救急帮困工程</h4>
 
             <p>多年来，海亮胸怀大爱，帮困济贫，重点救助因特发事件、重大疾病致困的人群，帮助困难群众度过生活难关，累计捐款达1000余万元；累计向汶川地震、玉树地震灾区捐款1300余万元。</p>
         </div>
         <div class="listbox_pictxt">
-            <img src="/public/img/menu_cont_box_pic_43.jpg" alt=""/>
+            <img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_43.jpg" alt=""/>
             <h4>励志助学工程</h4>
 
             <p>

@@ -4,7 +4,7 @@ CView::show('layout/header', $header);
 ?>
 <style>
     body {
-        background: url(/public/img/bg_jobs.jpg) no-repeat right bottom fixed;
+        background: url(<?=WEB_PATH?>/public/img/bg_jobs.jpg) no-repeat right bottom fixed;
     }
 
 </style>

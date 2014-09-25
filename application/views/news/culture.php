@@ -3,7 +3,7 @@ $header['page_title'] = CLang::page()->title('home');
 CView::show('layout/header', $header);
 ?>
 <style>
-body{background:#fafafa url(/public/img/bg_culture.jpg) no-repeat center bottom fixed;}
+body{background:#fafafa url(<?=WEB_PATH?>/public/img/bg_culture.jpg) no-repeat center bottom fixed;}
 
 </style>
 
@@ -38,11 +38,11 @@ body{background:#fafafa url(/public/img/bg_culture.jpg) no-repeat center bottom 
 关爱——强调对人性的理解，关爱人才、关爱消费者，时时刻刻关注及不断尽力满足他们的需求，与明康汇共同创建未来，实现彼此梦想。 </td>
     </tr>
   <tr>
-    <td><img src="/public/img/culture_pic_1.jpg"  alt=""/></td>
+    <td><img src="<?=WEB_PATH?>/public/img/culture_pic_1.jpg"  alt=""/></td>
     <td>&nbsp;</td>
-    <td><img src="/public/img/culture_pic_2.jpg"  alt=""/></td>
+    <td><img src="<?=WEB_PATH?>/public/img/culture_pic_2.jpg"  alt=""/></td>
     <td>&nbsp;</td>
-    <td><img src="/public/img/culture_pic_3.jpg"  alt=""/></td>
+    <td><img src="<?=WEB_PATH?>/public/img/culture_pic_3.jpg"  alt=""/></td>
   </tr>
   <tr>
     <td class="culture_tl"><b>企&nbsp;&nbsp;&nbsp;&nbsp;业&nbsp;&nbsp;&nbsp;&nbsp;精&nbsp;&nbsp;&nbsp;&nbsp;神</b><br />

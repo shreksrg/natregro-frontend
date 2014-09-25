@@ -7,7 +7,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 
-    <link rel="shortcut icon" href="/public/img/favicon.ico">
+    <link rel="shortcut icon" href="<?=WEB_PATH?>/public/img/favicon.ico">
     <meta http-equiv="expires" content="-1">
     <title>友情提示</title>
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">

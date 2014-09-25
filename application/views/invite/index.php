@@ -4,7 +4,7 @@ CView::show('layout/header', $header);
 ?>
 <style>
     body {
-        background: url(/public/img/bg_jobs.jpg) no-repeat center bottom fixed;
+        background: url(<?=WEB_PATH?>/public/img/bg_jobs.jpg) no-repeat center bottom fixed;
     }
 
 </style>
@@ -22,7 +22,7 @@ CView::show('layout/invite', array('selIndex' => 0));
 
 <div class="jobs_list">
     <div class="jobs_list_tab jobs_list_tab_1"><a id="inviteTag" href="hr_jobs2.html"><img
-                src="/public/img/btn_jobs_listtab.png"
+                src="<?=WEB_PATH?>/public/img/btn_jobs_listtab.png"
                 width="200"
                 height="73" alt=""/></a></div>
     <div class="search">

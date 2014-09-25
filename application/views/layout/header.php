@@ -6,7 +6,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <title><?= $page_title ?></title>
-    <link rel="stylesheet" type="text/css" href="<?= APP_URL ?>/public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?= WEB_PATH ?>/public/css/main.css">
     <?php
     if (isset($page_styles) && $page_styles) {
         foreach ($page_styles as $style) {
@@ -14,7 +14,7 @@
         }
     }
     ?>
-    <script src="<?= APP_URL ?>/public/js/jquery.min.js"></script>
+    <script src="<?= WEB_PATH ?>/public/js/jquery.min.js"></script>
     <?php
     if (isset($page_scripts) && $page_scripts) {
         foreach ($page_scripts as $script) {

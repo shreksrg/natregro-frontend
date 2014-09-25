@@ -3,7 +3,7 @@ $header['page_title'] = CLang::page()->title('home');
 CView::show('layout/header', $header);
 ?>
 <style>
-    body{background:url(/public/img/bg_brand.jpg) no-repeat center 0; background-size:2000px 1000px; }
+    body{background:url(<?=WEB_PATH?>/public/img/bg_brand.jpg) no-repeat center 0; background-size:2000px 1000px; }
 </style>
 <script>
     $(function(){
@@ -18,7 +18,7 @@ CView::show('layout/header', $header);
         <li id="mtab2_current2"><a href="<?=APP_URL?>/news/brands?tag=logo">图形诠释</a></li>
     </ul>
     <div class="left_title">
-        <h2>图形诠释</h2><p><img src="/public/img/brand_logo.png" alt=""/></p>
+        <h2>图形诠释</h2><p><img src="<?=WEB_PATH?>/public/img/brand_logo.png" alt=""/></p>
     </div>
     <div class="middle_txt">
         <h2>心作良田 田育良品</h2>

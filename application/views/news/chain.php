@@ -44,20 +44,20 @@ CView::show('layout/header', $header);
             $(this).addClass("cur");
             $(".menu_cont_box,.menu_cont_box_silder").css("display", "none")
             $("#" + $(this).attr("class").substring(0, 5) + "box").css("display", "block")
-            $("body").css("background", "url(/public/img/bg_" + $(this).attr("class").substring(0, 5) + "box.jpg) no-repeat right center fixed")
+            $("body").css("background", "url(<?=WEB_PATH?>/public/img/bg_" + $(this).attr("class").substring(0, 5) + "box.jpg) no-repeat right center fixed")
         });
         $(".menu_list a.list10").click(function () {
             $(".menu_list a").removeClass("cur");
             $(this).addClass("cur");
             $(".menu_cont_box").css("display", "none")
             $("#list10box").css("display", "block")
-            $("body").css("background", "url(/public/img/bg_list10box.jpg) no-repeat right center fixed")
+            $("body").css("background", "url(<?=WEB_PATH?>/public/img/bg_list10box.jpg) no-repeat right center fixed")
         });
     });
 </script>
 <style>
     body {
-        background: url(/public/img/bg_list1box.jpg) no-repeat right center fixed;
+        background: url(<?=WEB_PATH?>/public/img/bg_list1box.jpg) no-repeat right center fixed;
     }
 </style>
 <body>
@@ -81,7 +81,7 @@ CView::show('layout/header', $header);
     <h3>优选基地——良田方能出良品生活</h3>
 
     <div class="dec">
-        <div class="pic"><img src="/public/img/menu_cont_box_pic61.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic61.jpg" alt=""/></div>
         <b>“望、闻、问、切”法，按照有机的高标准挑选适宜的生产基地。</b><br/>
         <table width="100%" border="0" cellspacing="8" cellpadding="0">
             <tr>
@@ -128,7 +128,7 @@ CView::show('layout/header', $header);
 
         <p>上海地处中国漫长海岸线的中心，世界第三大河、亚洲第一大河——长江入海口以及长三角城市群龙头核心。金山区廊下镇农业资源丰富，被定位为上海市市级现代农业园区，区域面积为51 平方公里，实行镇与园区合一管理体制。</p>
 
-        <div class="pic"><img src="/public/img/menu_cont_box_pic_71.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_71.jpg" alt=""/></div>
         <p>海亮长三角有机食品加工基地选择落户上海金山廊下镇。目前，上海海亮有机食品供应链有限公司承担海亮健康食品集团“生产加工”职能，注册资本1 亿，总投资约16 亿，在上海金山廊下镇占地500
             亩，按照“一次规划、分期建设”，分3 期建设成集研发、检测、办公、生产加工、仓储、配送等一体的综合产业园。</p>
 
@@ -141,7 +141,7 @@ CView::show('layout/header', $header);
 </div>
 
 <div id="list8box" class="menu_cont_box"
-     style="background:#fff url(/public/img/menu_cont_box_pic_bg81.jpg) center bottom no-repeat;">
+     style="background:#fff url(<?=WEB_PATH?>/public/img/menu_cont_box_pic_bg81.jpg) center bottom no-repeat;">
     <h5>我们自己的</h5>
 
     <h1>质量检测中心</h1>
@@ -184,7 +184,7 @@ CView::show('layout/header', $header);
     <div class="dec">
         <p>配备温度记录设施，可以实时监控到配送的时间和温度的状态，确保冷藏设施的运转正常。通过城际配送、宅配等快捷运输方式，满足长三角乃至全国市场的供给需求。</p>
 
-        <div class="pic"><img src="/public/img/menu_cont_box_pic_91.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_91.jpg" alt=""/></div>
     </div>
 </div>
 
@@ -199,7 +199,7 @@ CView::show('layout/header', $header);
         <p>明康汇在全国自建、自营以自产生鲜为核心的中高端全国连锁超市，初期聚焦长三角，然后进军京津地区，再逐步扩张至珠三角及环渤海湾地区。
             依托物流中心及高速路网发展, 拓展一二三线城市,下沉四线城市 门店覆盖主城区及下属经济发达人口成熟的县、镇区域。</p>
 
-        <div class="pic"><img src="/public/img/menu_cont_box_pic_101.jpg" alt=""/></div>
+        <div class="pic"><img src="<?=WEB_PATH?>/public/img/menu_cont_box_pic_101.jpg" alt=""/></div>
     </div>
     <h3 style="margin-top:-20px;">门店类型</h3>
 
