@@ -26,10 +26,10 @@ class News extends FrontController
     public function turns()
     {
         $actArr = array('prev' => '>', 'next' => '<');
-        $type = (int)$this->input->get('t');
+        $type = $this->input->get('t');
         $id = (int)$this->input->get('id');
         $action = $this->input->get('do');
-        if (isset($this->_typeArr[$type]) && isset($actArr[$action])) {
+        if (in_array($type,$this->_typeArr) && isset($actArr[$action])) {
             $id = $this->_modelNews->turns($type, $id, $actArr[$action]);
             CAjax::show(0, 'successful', $id);
         }
@@ -38,9 +38,10 @@ class News extends FrontController
     public function show()
     {
         $id = (int)$this->input->get('id');
-        $type = (int)$this->input->get('t');
+        $type = $this->input->get('t');
         $typeArr = array('news', 'slide');
-        if (isset($this->_typeArr[$type])) {
+
+        if (in_array($type, $this->_typeArr)) {
             $data['type'] = $type;
             $data['news'] = $this->_modelNews->{$type . 'Detail'}($id);
             if ($data['news'])
@@ -116,10 +117,10 @@ class News extends FrontController
         $tagArr = array('self' => 2, 'line' => 1, 'feed' => 0);
         if (isset($tagArr[$route])) {
             $data['selIndex'] = $tagArr[$route];
-            if($route == 'feed'){
-                $view='form';
-            }else{
-                $view='index';
+            if ($route == 'feed') {
+                $view = 'form';
+            } else {
+                $view = 'index';
                 $catId = 8;
                 $limit = array('page' => $page, 'rows' => 6);
                 $data['news'] = $this->_modelNews->news($catId, $limit);

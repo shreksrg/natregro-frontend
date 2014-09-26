@@ -12,7 +12,7 @@ CView::show('layout/header', $header);
     </div>
     <a class="prev" href="<?= APP_URL ?>/news/show">上一篇</a>
     <a class="next" href="<?= APP_URL ?>/news/show">下一篇</a>
-    <a class="goback" href="news.html">返回</a>
+    <a class="goback" href="<?= APP_URL ?>/news/announce">返回</a>
 
 </div>
 <div class="news_cont">
