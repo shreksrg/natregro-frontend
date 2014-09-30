@@ -32,9 +32,10 @@ CView::show('layout/header', $header);
                         if ($len >= 45) {
                             $desc = mb_substr($desc, 0, 45) . '...';
                         }
-
+                        $tag = 0;
                         ?>
-                        <li><a href="#"><img src="<?= $imgSrc ?>"/>
+                        <li><a href="<?= APP_URL ?>/news/show?r=announce&t=news&c=<?= $tag ?>&id=<?= $row['id'] ?>"><img
+                                    src="<?= $imgSrc ?>"/>
 
                                 <p><span><?= $title ?> </span><?= $desc ?> </p></a>
 
@@ -42,14 +43,7 @@ CView::show('layout/header', $header);
                     <?php
                     }
                 } ?>
-                <li><a href="#"><img src="<?= WEB_PATH ?>/public/img/silderbar.png"/>
 
-                        <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
-                </li>
-                <li><a href="#"><img src="<?= WEB_PATH ?>/public/img/silderbar.png"/>
-
-                        <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
-                </li>
             </ul>
         </div>
 
@@ -64,7 +58,7 @@ CView::show('layout/header', $header);
         <?php
         if ($news) {
             foreach ($news as $row) {
-                echo '<a href="' . APP_URL . '/news/show?t=news&id=' . $row['id'] . '">' . $row['title'] . ' <span>' . date('Y-m-d', $row['inputtime']) . '</span></a>';
+                echo '<a href="' . APP_URL . '/news/show?r=announce&t=news&id=' . $row['id'] . '">' . $row['title'] . ' <span>' . date('Y-m-d', $row['inputtime']) . '</span></a>';
             }
         }
 

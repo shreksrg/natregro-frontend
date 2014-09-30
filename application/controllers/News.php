@@ -11,13 +11,13 @@ class News extends FrontController
         $this->_modelNews = CModel::make('news_model');
     }
 
+
     public function index()
     {
-        $page = (int)$this->input->get('page');
-        $catId = 17;
-        $limit = array('page' => $page, 'rows' => 6);
-        $data['rows'] = $this->_modelNews->news($catId, $limit);
-        CView::show('news/enterprise', $data);
+        $route = $this->input->get('r');
+        if (method_exists($this, $route)) {
+            $this->{$route}();
+        }
     }
 
     /**
@@ -29,8 +29,8 @@ class News extends FrontController
         $type = $this->input->get('t');
         $id = (int)$this->input->get('id');
         $action = $this->input->get('do');
-        if (in_array($type,$this->_typeArr) && isset($actArr[$action])) {
-            $id = $this->_modelNews->turns($type, $id, $actArr[$action]);
+        if (in_array($type, $this->_typeArr) && isset($actArr[$action])) {
+            $id = $this->_modelNews->turns($id, $actArr[$action]);
             CAjax::show(0, 'successful', $id);
         }
     }
@@ -38,11 +38,13 @@ class News extends FrontController
     public function show()
     {
         $id = (int)$this->input->get('id');
+        $route = $this->input->get('r');
         $type = $this->input->get('t');
-        $typeArr = array('news', 'slide');
-
-        if (in_array($type, $this->_typeArr)) {
+        $tag = $this->input->get('c');
+        if (method_exists($this, $route) && in_array($type, $this->_typeArr)) {
+            $data['route'] = $route;
             $data['type'] = $type;
+            $data['tag'] = $tag;
             $data['news'] = $this->_modelNews->{$type . 'Detail'}($id);
             if ($data['news'])
                 CView::show('news/detail', $data);
@@ -54,9 +56,13 @@ class News extends FrontController
      */
     public function group()
     {
+        $catIds = array(15, 16, 17, 30);
         $tag = (int)$this->input->get('tag');
         if ($tag <= 0) $tag = 1;
-        CView::show('news/group', array('tag' => $tag));
+        $news = $this->_modelNews->page($catIds);
+        $newsArr = $this->formatNews($news);
+        //d($newsArr);
+        CView::show('news/group', array('tag' => $tag, 'news' => $newsArr));
     }
 
     /**
@@ -64,7 +70,9 @@ class News extends FrontController
      */
     public function culture()
     {
-        CView::show('news/culture');
+        $catIds = array(7);
+        $news = $this->_modelNews->page($catIds);
+        CView::show('news/culture', array('news' => $news));
     }
 
     /**
@@ -74,25 +82,28 @@ class News extends FrontController
     {
         $page = (int)$this->input->get('page');
         if ($page <= 0) $page = 1;
-        $catId = 2;
+        $data['catId'] = $catId = 2;
         $limit = array('page' => $page, 'rows' => 6);
         $data['news'] = $this->_modelNews->news($catId, $limit);
 
-        $catId = 4;
-        $limit = array('page' => $page, 'rows' => 3);
+        $limit = array('page' => 1, 'rows' => 3);
         $data['slides'] = $this->_modelNews->slides($catId, $limit);
         CView::show('news/announce', $data);
     }
 
     /**
-     * 品牌
+     * 品牌诠释
      */
     public function brands()
     {
-        $tagArr = array('intro', 'logo', 'vision', 'value', 'story');
+        $tagArr = array('intro' => 21, 'logo' => 19, 'vision' => 20, 'value' => 22, 'story');
         $tag = $this->input->get('tag');
-        if (in_array($tag, $tagArr)) {
-            CView::show('brand/' . $tag);
+        if (array_key_exists($tag, $tagArr)) {
+            $catIds = array($tagArr[$tag]);
+            $news = $this->_modelNews->page($catIds);
+            //  $newsArr = $this->formatNews($news);
+            // d($news);
+            CView::show('brand/' . $tag, array('news' => $news));
         }
     }
 
@@ -103,7 +114,10 @@ class News extends FrontController
     {
         $tag = (int)$this->input->get('tag');
         if ($tag <= 0) $tag = 5;
-        CView::show('news/chain', array('tag' => $tag));
+        $catIds = array(24, 25, 26, 27, 28, 29);
+        $news = $this->_modelNews->page($catIds);
+        $newsArr = $this->formatNews($news);
+        CView::show('news/chain', array('tag' => $tag, 'news' => $newsArr));
     }
 
     /**
@@ -111,30 +125,32 @@ class News extends FrontController
      */
     public function exposure()
     {
-        $route = $this->input->get('r');
+        $tag = $this->input->get('c');
         $page = (int)$this->input->get('page');
         if ($page <= 0) $page = 1;
         $tagArr = array('self' => 2, 'line' => 1, 'feed' => 0);
-        if (isset($tagArr[$route])) {
-            $data['selIndex'] = $tagArr[$route];
-            if ($route == 'feed') {
+        if (isset($tagArr[$tag])) {
+            $data['tag'] = $tag;
+            $data['selIndex'] = $tagArr[$tag];
+            if ($tag == 'feed') {
                 $view = 'form';
             } else {
                 $view = 'index';
-                $catId = 8;
+                if ($tag == 'self') $catId = 9;
+                if ($tag == 'line') $catId = 10;
+                $data['catId'] = $catId;
                 $limit = array('page' => $page, 'rows' => 6);
                 $data['news'] = $this->_modelNews->news($catId, $limit);
-
-                $catId = 10;
-                $limit = array('page' => $page, 'rows' => 3);
+                $limit = array('page' => 1, 'rows' => 3);
                 $data['slides'] = $this->_modelNews->slides($catId, $limit);
+
             }
             CView::show("exposure/$view", $data);
         }
     }
 
     /**
-     * sns连接
+     * sns链接
      */
     public function sns()
     {
@@ -145,4 +161,17 @@ class News extends FrontController
             CView::show("sns/index", array('route' => $route, 'selIndex' => $tagArr[$route]));
         }
     }
+
+
+    public function formatNews($news)
+    {
+        $newsArr = null;
+        if ($news) {
+            foreach ($news as $item) {
+                $newsArr[$item['catid']] = $item;
+            }
+        }
+        return $newsArr;
+    }
+
 }

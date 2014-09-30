@@ -1,9 +1,7 @@
 <div class="header">
     <a class="logo" href="<?= APP_URL ?>" target="_self"></a>
     <ul id="nav">
-        <li class="nav1"><a href="<?= APP_URL ?>/news/brands?tag=story">品牌故事</a>
-        </li>
-        <li class="nav2"><a href="#">关于明康</a>
+        <li class="nav2"><a href="#">明康汇</a>
             <ul class="children">
                 <li><a href="#">集团简介</a>
                     <ul class="children">
@@ -18,9 +16,9 @@
                 </li>
                 <li><a href="<?= APP_URL ?>/news/culture">企业文化</a>
                 </li>
+
             </ul>
-        </li>
-        <li><a class="nav3" href="#">全产业链</a>
+        <li class="nav3"><a href="#">全产业链</a>
             <ul class="children">
                 <li><a href="<?= APP_URL ?>/news/chain?tag=5">产业概述</a></li>
                 <li><a href="<?= APP_URL ?>/news/chain?tag=6">农业基地</a></li>
@@ -31,7 +29,6 @@
             </ul>
         </li>
         <li class="nav5"><a href="<?= APP_URL ?>/invite">招贤纳士</a></li>
-        <li class="nav6"><a href="<?= APP_URL ?>/news/exposure?r=self">诚信曝光</a></li>
+        <li class="nav6"><a href="<?= APP_URL ?>/news/exposure?c=self">诚信台</a></li>
     </ul>
-    <div class="zs"></div>
 </div>

@@ -17,15 +17,12 @@ CView::show('layout/header', $header);
         <li><a href="<?=APP_URL?>/news/brands?tag=vision">品牌愿景</a></li>
         <li id="mtab2_current2"><a href="<?=APP_URL?>/news/brands?tag=logo">图形诠释</a></li>
     </ul>
-    <div class="left_title">
-        <h2>图形诠释</h2><p><img src="<?=WEB_PATH?>/public/img/brand_logo.png" alt=""/></p>
-    </div>
-    <div class="middle_txt">
-        <h2>心作良田 田育良品</h2>
-        <p>《道德经》：“道生一，一生二，二生三，三生万物”。
-            自然之道，是万物生长的法则。金色阳光与绿色之水，形成生命的本源。</p>
-        <p>明康汇图形标志是光与水的融合，整体呈现“心”形，寓意着 “为天地立心，为生民立命”的信仰，“用良心作良田、用良田育良品”的担当。
-            明康汇的文字标志采用厚重的大地色，象征食品人亲近土地、尊重自然，用生态沃土托起健康食品的明天。</p>
+    <div class="_content">
+        <?php
+        if ($news) {
+            echo $news[0]['content'];
+        }
+        ?>
     </div>
 
 </div>

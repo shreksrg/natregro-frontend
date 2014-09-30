@@ -18,17 +18,12 @@ CView::show('layout/header', $header);
         <li><a href="<?=APP_URL?>/news/brands?tag=vision">品牌愿景</a></li>
         <li><a href="<?=APP_URL?>/news/brands?tag=logo">图形诠释</a></li>
     </ul>
-    <div class="left_title">
-        <h2>品牌价值</h2><p>您的笑容与幸福，将是我们不懈的追求！</p>
-    </div>
-    <div class="middle_txt">
-        <img src="<?=WEB_PATH?>/public/img/brand_31.jpg" alt=""/>
-        <h3>创造更多健康与美味<br />
-            让消费者绽放发自内心的笑容与幸福</h3>
-
-        <p>凭借从自有生产基地到销售的全产业链统一化透明管理，以安全优质的健康生鲜为主打，
-            满足消费者对食品安全以及健康生活的更高诉求，让食品更显新鲜与健康，让生活再添幸福与安心。
-            而消费者发自内心的笑容与幸福，将永远是明康汇的不懈追求。</p>
+    <div class="_content">
+        <?php
+        if ($news) {
+            echo $news[0]['content'];
+        }
+        ?>
     </div>
 
 </div>

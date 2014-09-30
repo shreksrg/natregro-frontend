@@ -11,42 +11,18 @@ CView::show('layout/header', $header);
 <body>
 <div class="newscont  newscont_fix2">
     <ul class="mtab2">
-        <li><a href="<?=APP_URL?>/news/brands?tag=value">品牌价值</a></li>
-        <li id="mtab2_current2"><a href="<?=APP_URL?>/news/brands?tag=intro">品牌诠释</a></li>
-        <li><a href="<?=APP_URL?>/news/brands?tag=vision">品牌愿景</a></li>
-        <li><a href="<?=APP_URL?>/news/brands?tag=logo">图形诠释</a></li>
+        <li><a href="<?= APP_URL ?>/news/brands?tag=value">品牌价值</a></li>
+        <li id="mtab2_current2"><a href="<?= APP_URL ?>/news/brands?tag=intro">品牌诠释</a></li>
+        <li><a href="<?= APP_URL ?>/news/brands?tag=vision">品牌愿景</a></li>
+        <li><a href="<?= APP_URL ?>/news/brands?tag=logo">图形诠释</a></li>
     </ul>
-    <div class="left_title">
-        <h2>品牌诠释</h2>
 
-        <p>汇聚明天的健康！为明天的健康努力！</p>
-    </div>
-    <div class="middle_txt">
-        <h3>明康汇：明白的好食品！</h3>
-        <table width="100%" border="0" cellspacing="1" cellpadding="0" class="brand_tb">
-            <tr>
-                <td style="background:#009740;">明天，明白，明悟自然。源于对自然之道的领悟，
-                    对明天生活的期许，我们回归源头，破解食物的
-                    密码。尊重每寸土地的生态，遵循动植物生长规
-                    律。不仅提供安全美食，更向人们明白地呈现食
-                    材从田园到餐桌的美味历程。
-                </td>
-                <td style="background:#ecc252;">健康，安康，康品人间。我们把对个体健康的
-                    关怀、对社会安康的希望，融入到生态农业与
-                    健康食品事业中。用心耕耘的品味，让每个家
-                    庭买得放心、吃得安心、用得舒心。
-                </td>
-                <td style="background:#6b3f22;">汇粹，汇聚，汇融天下。汇天时、地利、人和，
-                    融安全、健康、美味。我们的理想是传递自然
-                    的馈赠与时光的味道，用门店向人们展现以生
-                    鲜为核心的世界美食地图。
-                </td>
-            </tr>
-        </table>
-
-        <p>认清昨天的来处，心系明天的去向。
-            明康汇，从源头做起，自建遍布全国的农业基地，用生态沃土诠释产品出身。通过全程可追溯的可视化系统，让消费者明晰每个产品的身份履历。我们承诺做到：安全看得见，美味尝得到，营养算得出。
-            明康汇，用健康食品塑造幸福中国！</p>
+    <div class="_content">
+        <?php
+        if ($news) {
+            echo $news[0]['content'];
+        }
+        ?>
     </div>
 
 </div>

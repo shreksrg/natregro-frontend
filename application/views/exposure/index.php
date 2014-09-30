@@ -17,52 +17,87 @@ CView::show('layout/header', $header);
 </head>
 
 <body>
-<div class="newscont">
+<?php
+$style = null;
+if ($tag == 'line') {
+    $title = '行业曝光台';
+}
+if ($tag == 'self') {
+    $style = 'background:url(/natregro/img/exposurecontbg2.jpg) no-repeat 0 12px;background-size:cover';
+    $title = '诚信台';
+}
+?>
+<div class="newscont" style="<?= $style ?>">
     <?php
+
     CView::show('layout/exposure', array('selIndex' => $selIndex))
     ?>
 
     <div class="left_title">
-        <h2>诚信曝光台</h2>
+        <h2><?= $title ?></h2>
 
         <p>我们拒绝一切不诚信的行为，并且敢于将这些行为公开曝光！</p>
     </div>
-    <div class="middle_silder">
-        <!--<ul>
-            <li><img src="<?=WEB_PATH?>/public/img/silderbar.png" alt=""/><p><span>海亮集团连续10年入围中国企业500强</span>排名跃… 2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></li>
+
+    <?php
+    if ($tag == 'line') {
+        ?>
+        <div class="middle_silder">
+            <!--<ul>
+            <li><img src="<?= WEB_PATH ?>/public/img/silderbar.png" alt=""/><p><span>海亮集团连续10年入围中国企业500强</span>排名跃… 2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></li>
         </ul>-->
-        <div class="container" id="idTransformView2">
-            <ul class="slider" id="idSlider2">
-                <li><a href="#"><img src="<?=WEB_PATH?>/public/img/silderbar.png"/>
+            <div class="container" id="idTransformView2">
+                <ul class="slider" id="idSlider2">
+                    <?php
+                    if ($slides) {
+                        foreach ($slides as $row) {
+                            $imgSrc = $row['thumb'];
+                            $title = $row['title'];
+                            $len = mb_strlen($title);
+                            if ($len >= 19) {
+                                $title = mb_substr($title, 0, 19) . '...';
+                            }
 
-                        <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
-                </li>
-                <li><a href="#"><img src="<?=WEB_PATH?>/public/img/silderbar.png"/>
+                            $desc = $row['description'];
+                            $len = mb_strlen($desc);
+                            if ($len >= 45) {
+                                $desc = mb_substr($desc, 0, 45) . '...';
+                            }
+                            ?>
+                            <li>
+                                <a href="<?= APP_URL ?>/news/show?r=exposure&t=news&c=<?= $tag ?>&id=<?= $row['id'] ?>"><img
+                                        src="<?= $imgSrc ?>"/>
 
-                        <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
-                </li>
-                <li><a href="#"><img src="<?=WEB_PATH?>/public/img/silderbar.png"/>
+                                    <p><span><?= $title ?> </span><?= $desc ?> </p></a>
+                            </li>
+                        <?php
+                        }
+                    } ?>
 
-                        <p><span>海亮集团连续10年入围中国企业500强… </span>2014年9月2日，由中国企业联合会、中国企业家协会主办，重庆市人民政府承办的2014中国...</p></a>
-                </li>
+                </ul>
+            </div>
+
+            <ul class="num" id="idNum2">
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
 
-        <ul class="num" id="idNum2">
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+        <div class="right_newslist">
+            <?php
+            if ($news) {
+                foreach ($news as $row) {
 
-    <div class="right_newslist">
-        <a href="#">海亮集团志愿者结对幸福院孤儿象山行活动顺利举行 <span>2014-08-28</span></a>
-        <a href="#">浙江百强企业榜单发布 海亮集团位居第7位<span>2014-08-28</span></a>
-        <a href="#">海亮集团董事长冯亚丽获授首届“光荣浙商”称号<span>2014-08-28</span></a>
-        <a href="#">2014中国民营企业500强发布 海亮集团有限公司位列第16位<span>2014-08-28</span></a>
-        <a href="#">绍兴市市长俞志宏一行到海亮集团调研指导工作<span>2014-08-28</span></a>
-        <a href="#">海亮集团2014年新员工入职军训成功举行<span>2014-08-28</span></a>
-    </div>
+                    ?>
+                    <a href="<?= APP_URL ?>/news/show?r=exposure&t=news&c=<?= $tag ?>&id=<?= $row['id'] ?>"><?= $row['title'] ?>
+                        <span><?= date('Y-m-d', $row['inputtime']) ?></span></a>
+                <?php
+                }
+            } ?>
+
+        </div>
+    <?php } ?>
 </div>
 
 <?php

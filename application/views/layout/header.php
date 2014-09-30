@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <link rel="icon" type="image/gif" href="<?= WEB_PATH ?>/public/img/favicon.ico">
     <title><?= $page_title ?></title>
     <link rel="stylesheet" type="text/css" href="<?= WEB_PATH ?>/public/css/main.css">
     <?php

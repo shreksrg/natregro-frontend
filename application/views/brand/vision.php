@@ -17,15 +17,12 @@ CView::show('layout/header', $header);
         <li id="mtab2_current2"><a href="<?=APP_URL?>/news/brands?tag=vision">品牌愿景</a></li>
         <li><a href="<?=APP_URL?>/news/brands?tag=logo">图形诠释</a></li>
     </ul>
-    <div class="left_title">
-        <h2>品牌价值</h2><p>明康汇将是中国食品安全的践行者与推动者</p>
-    </div>
-    <div class="middle_txt">
-        <img src="<?=WEB_PATH?>/public/img/brand_41.jpg" alt=""/>
-        <h3>打造食品安全可持续发展的新未来幸福</h3>
-        <p>时刻以食品安全为己任，至诚至真为更高生活品质的追求者提供值得放心的优质食品，重塑消费者对中国食品安全的坚定信念，以助力食品行业的健康发展。</p>
-        <p>从品牌创立之初，我们便深谙蕴含于企业本身之中的食品安全之道，即致力于重塑消费者对中国食品安全的坚定信念。通过实行复核国际标准的严格食品管理和创新型企业产业链管理模式，安全生产，明康汇将为更多的消费者创造真正值得信任的健康安全的食品。</p>
-        <p></p>
+    <div class="_content">
+        <?php
+        if ($news) {
+            echo $news[0]['content'];
+        }
+        ?>
     </div>
 
 </div>

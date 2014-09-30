@@ -22,7 +22,7 @@ CView::show('layout/invite', array('selIndex' => 0));
 
 <div class="jobs_list">
     <div class="jobs_list_tab jobs_list_tab_1"><a id="inviteTag" href="hr_jobs2.html"><img
-                src="<?=WEB_PATH?>/public/img/btn_jobs_listtab.png"
+                src="<?= WEB_PATH ?>/public/img/btn_jobs_listtab.png"
                 width="200"
                 height="73" alt=""/></a></div>
     <div class="search">
@@ -36,44 +36,22 @@ CView::show('layout/invite', array('selIndex' => 0));
         -->    </div>
     <div class="joblist_bg">
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="joblist_tb">
+            <thead>
             <tr id="joblist_tl">
                 <td>招聘职位</td>
                 <td>招聘部门</td>
                 <td>工作地点</td>
                 <td>职位申请</td>
             </tr>
-            <tr>
+            </thead>
+            <tbody>
+           <!-- <tr>
                 <td>SAPFICO高级顾问</td>
                 <td>人力资源部</td>
                 <td>上海市普陀区市</td>
-                <td><a href="<?= APP_URL ?>/invite/show">立即申请</a></td>
-            </tr>
-            <tr>
-                <td>节能环保产业财务总监</td>
-                <td>财务中心</td>
-                <td>上海市金山区</td>
-                <td><a href="<?= APP_URL ?>/invite/show">立即申请</a></td>
-            </tr>
-            <tr>
-                <td>SAPFICO高级顾问</td>
-                <td>人力资源部</td>
-                <td>上海市普陀区市</td>
-                <td><a href="<?= APP_URL ?>/invite/show">立即申请</a></td>
-            </tr>
-
-            <tr>
-                <td>节能环保产业财务总监</td>
-                <td>财务中心</td>
-                <td>上海市金山区</td>
-                <td><a href="<?= APP_URL ?>/invite/show">立即申请</a></td>
-            </tr>
-            <tr>
-                <td>SAPFICO高级顾问</td>
-                <td>人力资源部</td>
-                <td>上海市普陀区市</td>
-                <td><a href="<?= APP_URL ?>/invite/show">立即申请</a></td>
-            </tr>
-
+                <td><a href="<?/*= APP_URL */?>/invite/show">立即申请</a></td>
+            </tr>-->
+            </tbody>
         </table>
 
     </div>
@@ -86,20 +64,44 @@ CView::show('layout/footer');
 </body>
 
 <script>
+    var tbJobs = $('.joblist_tb tbody');
+
+    function loadJobs(tag) {
+        $.get('<?=APP_URL?>/invite/jobs?t=' + tag, null, function (resp) {
+            console.log(resp);
+            if (resp.code == 0) {
+                tbJobs.empty().append(resp.data);
+            }
+        }, 'json')
+    }
+
+    loadJobs('public');
+</script>
+
+<script>
     $('#inviteTag').click(function () {
         var jobTab1 = $('.jobs_list_tab_1');
         var jobTab2 = $('.jobs_list_tab_2');
+
+        var tag;
+
         if (jobTab1[0]) {
+            tag = 'campus';
             jobTab1.removeClass('jobs_list_tab_1');
             jobTab1.addClass('jobs_list_tab_2');
         }
 
         if (jobTab2[0]) {
+            tag = 'public';
             jobTab2.removeClass('jobs_list_tab_2');
             jobTab2.addClass('jobs_list_tab_1');
         }
+
+        loadJobs(tag);
         return false;
     })
+
 </script>
+
 
 </html>

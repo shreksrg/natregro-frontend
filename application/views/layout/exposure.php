@@ -1,7 +1,7 @@
 <ul class="mtab">
-    <li><a href="<?= APP_URL ?>/news/exposure?r=feed">反馈投诉</a></li>
-    <li><a href="<?= APP_URL ?>/news/exposure?r=line">行业曝光</a></li>
-    <li><a href="<?= APP_URL ?>/news/exposure?r=self">明康汇自曝</a></li>
+    <li><a href="<?= APP_URL ?>/feedback">反馈投诉</a></li>
+    <li><a href="<?= APP_URL ?>/news/exposure?c=line">行业曝光</a></li>
+    <li><a href="<?= APP_URL ?>/news/exposure?c=self">诚信台</a></li>
 </ul>
 
 <script>

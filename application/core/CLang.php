@@ -13,4 +13,16 @@ class CLang extends CCApplication
         return new MessageLang();
     }
 
+    static public function load($file)
+    {
+        $config = null;
+        $filePath = APPPATH . 'language/' . $file . '.php';
+        if (file_exists($filePath))
+            $config = require($filePath);
+        else {
+            $filePath = $file . '.php';
+            if (file_exists($filePath)) $config = require($filePath);
+        }
+        return $config;
+    }
 }
