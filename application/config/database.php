@@ -90,9 +90,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn' => '',
-    'hostname' => '192.168.116.172',
+    'hostname' => 'localhost',
     'username' => 'root',
-    'password' => 'microhr.123456',
+    'password' => '',
+   // 'password' => 'microhr.123456',
     'database' => 'natregro',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',

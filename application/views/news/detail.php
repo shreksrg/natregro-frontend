@@ -12,6 +12,7 @@ CView::show('layout/header', $header);
         2 => array('title' => '新闻 / 公告', 'desc' => '传播价值理念、传扬优秀文化、瞻注商海动态'),
         9 => array('title' => '曝光台', 'desc' => '我们拒绝一切不诚信的行为，并且敢于将这些行为公开曝光！'),
         10 => array('title' => '行业曝光', 'desc' => '我们拒绝一切不诚信的行为，并且敢于将这些行为公开曝光！'),
+        12 => array('title' => '员工活动', 'desc' => ''),
     );
     ?>
     <div class="left_title">

@@ -39,15 +39,6 @@ class Invite extends FrontController
             CView::show('invite/detail', $data);
     }
 
-    /**
-     * 员工活动
-     */
-    public function active()
-    {
-        $catId = 12;
-        $data['actives'] = $this->_modelInvite->actives($catId);
-        CView::show('invite/active', $data);
-    }
 
     /**
      * 员工发展与培养
@@ -59,6 +50,9 @@ class Invite extends FrontController
         CView::show('invite/train', $data);
     }
 
+    /**
+     * 联系方式
+     */
     public function contact()
     {
         $catIds = array(31);

@@ -29,6 +29,13 @@ class Invite_model extends App_model
         return $query->result_array();
     }
 
+    public function activeDetail($catId, $id)
+    {
+        $sql = "select * from nato_news where  catid=$catId and id=$id limit 1";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+
     public function train($catId)
     {
         $sql = "select * from nato_page where catid=$catId  limit 1";
