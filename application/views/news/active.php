@@ -28,10 +28,10 @@ CView::show('layout/invite', array('selIndex' => 1));
                 $img = $active['thumb'];
                 ?>
                 <li>
-                    <a href="/news/show?r=active&t=news&id=<?=$active['id']?>">
+                    <a href="<?=APP_URL?>/news/show?r=active&t=news&id=<?=$active['id']?>">
                     <img src="<?= $img ?>" width="240" height="156" alt=""/></a>
 
-                    <p><a href="/news/show?r=active&t=news&id=<?=$active['id']?>"><?= $active['title'] ?></a> </p>
+                    <p><a href="<?=APP_URL?>/news/show?r=active&t=news&id=<?=$active['id']?>"><?= $active['title'] ?></a> </p>
                     <?= $active['description'] ?>
                 </li>
             <?php
