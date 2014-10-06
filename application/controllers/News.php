@@ -163,6 +163,20 @@ class News extends FrontController
     }
 
 
+    /**
+     * 员工活动
+     */
+    public function active()
+    {
+        $page = (int)$this->input->get('page');
+        if ($page <= 0) $page = 1;
+        $data['catId'] = $catId = 12;
+        $limit = array('page' => $page, 'rows' => 100);
+        $data['actives'] = $this->_modelNews->news($catId, $limit);
+        CView::show('news/active', $data);
+    }
+
+
     public function formatNews($news)
     {
         $newsArr = null;

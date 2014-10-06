@@ -20,7 +20,7 @@ CView::show('layout/header', $header);
 <?php
 $style = null;
 if ($tag == 'line') {
-    $title = '行业曝光台';
+    $title = '行业新闻';
 }
 if ($tag == 'self') {
     $style = 'background:url(/natregro/img/exposurecontbg2.jpg) no-repeat 0 12px;background-size:cover';

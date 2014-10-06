@@ -20,16 +20,21 @@
 			if(a == 3){
 					$(".menu_list a.list1").addClass("cur");
 					$("#list1box").addClass("show");
+					$("body").css("background","url(img/bg_list1box.jpg) no-repeat right center fixed")
 			}else if(a == 1){
 					$(".menu_list a.list2").addClass("cur");
 					$("#list2box").addClass("show");
+					$("body").css("background","url(img/bg_list2box.jpg) no-repeat right center fixed")
 			}else if(a == 2){
 					$(".menu_list a.list3").addClass("cur");
 					$("#list3box").addClass("show");
+					$("body").css("background","url(img/bg_list3box.jpg) no-repeat right center fixed")
 			}else{
 					$(".menu_list a.list1").addClass("cur");
 					$("#list1box").addClass("show");
+					$("body").css("background","url(img/bg_list4box.jpg) no-repeat right center fixed")
 			}
+			
 		
 		$("#nav li.nav2 > a").css( "color","#fff000").css("background","#0b7d3a");
 		$(".menu_list a").click(function(){

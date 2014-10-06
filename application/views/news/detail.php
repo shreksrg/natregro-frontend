@@ -11,13 +11,14 @@ CView::show('layout/header', $header);
     $headerArr = array(
         2 => array('title' => '新闻 / 公告', 'desc' => '传播价值理念、传扬优秀文化、瞻注商海动态'),
         9 => array('title' => '曝光台', 'desc' => '我们拒绝一切不诚信的行为，并且敢于将这些行为公开曝光！'),
-        10 => array('title' => '行业曝光', 'desc' => '我们拒绝一切不诚信的行为，并且敢于将这些行为公开曝光！'),
+        10 => array('title' => '行业新闻', 'desc' => '我们拒绝一切不诚信的行为，并且敢于将这些行为公开曝光！'),
+        12 => array('title' => '员工活动', 'desc' => ''),
     );
     ?>
     <div class="left_title">
         <h2><?= $headerArr[$catId]['title'] ?></h2>
 
-        <p><?= $headerArr[$catId]['desc'] ?></p>
+        <p><?= isset($headerArr[$catId]) ? $headerArr[$catId]['desc'] : '' ?></p>
     </div>
     <a class="prev" href="<?= APP_URL ?>/news/show">上一篇</a>
     <a class="next" href="<?= APP_URL ?>/news/show">下一篇</a>
@@ -27,8 +28,19 @@ CView::show('layout/header', $header);
 <div class="news_cont">
 
     <h2><?= $news['title'] ?><span><?= date('Y-m-d', $news['inputtime']) ?></span></h2>
+    <style>
 
-    <div class="news_text">
+        .news_text p {
+            text-indent: 2em;
+            padding-bottom: .5em;
+        }
+
+        .news_text br {
+            width: 0px;
+            over-flow line-height:
+        }
+    </style>
+    <div class="news_text" style="width:60%;font-size:16px;line-height:30px">
         <?= $news['content'] ?>
 
     </div>

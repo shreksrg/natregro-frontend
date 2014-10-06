@@ -56,8 +56,11 @@ CView::show('layout/header', $header);
     });
 </script>
 <style>
+    <?php
+       $imgBg=array(6=>6,7=>7,8=>8,9=>9,10=>10);
+   ?>
     body {
-        background: url(<?=WEB_PATH?>/public/img/bg_list1box.jpg) no-repeat right center fixed;
+        background: url(<?=WEB_PATH?>/public/img/bg_list<?=$imgBg[$tag]?>box.jpg) no-repeat right center fixed;
     }
 </style>
 <body>
@@ -97,7 +100,7 @@ CView::show('layout/header', $header);
 </div>
 
 <div id="list8box" class="menu_cont_box"
-     style="background:#fff url(<?=WEB_PATH?>/public/img/menu_cont_box_pic_bg81.jpg) center bottom no-repeat;">
+     style="background:#fff url(<?= WEB_PATH ?>/public/img/menu_cont_box_pic_bg81.jpg) center bottom no-repeat;">
 
     <?php
     if (isset($news[27])) {

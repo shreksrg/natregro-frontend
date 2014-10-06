@@ -10,7 +10,7 @@ class News_model extends App_model
     {
         $rows = $limit['rows'];
         $start = ($limit['page'] - 1) * $rows;
-        $sql = "select id,catid,title,inputtime from nato_news where catid=$catId order by listorder, inputtime desc limit $start,$rows";
+        $sql = "select id,catid,title,thumb,description,inputtime from nato_news where catid=$catId order by listorder, inputtime desc limit $start,$rows";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

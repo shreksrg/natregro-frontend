@@ -40,8 +40,11 @@ CView::show('layout/header', $header);
     });
 </script>
 <style>
+    <?php
+        $imgBg=array(1=>2,2=>3,3=>1);
+    ?>
     body {
-        background: url(<?=WEB_PATH?>/public/img/bg_list1box.jpg) no-repeat right center fixed;
+        background: url(<?=WEB_PATH?>/public/img/bg_list<?=$imgBg[$tag]?>box.jpg) no-repeat right center fixed;
     }
 </style>
 <body>

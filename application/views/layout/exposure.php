@@ -1,6 +1,6 @@
 <ul class="mtab">
     <li><a href="<?= APP_URL ?>/feedback">反馈投诉</a></li>
-    <li><a href="<?= APP_URL ?>/news/exposure?c=line">行业曝光</a></li>
+    <li><a href="<?= APP_URL ?>/news/exposure?c=line">行业新闻</a></li>
     <li><a href="<?= APP_URL ?>/news/exposure?c=self">诚信台</a></li>
 </ul>
 
