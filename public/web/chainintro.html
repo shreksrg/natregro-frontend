@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
@@ -25,6 +24,7 @@
 					$(".menu_list a.list6").addClass("cur");
 					$("#list6box").addClass("show");
 					$("body").css("background","url(img/bg_list6box.jpg) no-repeat right center fixed")
+					$(".menu_cont_map").css("display","block");
 			}else if(a == 7){
 					$(".menu_list a.list7").addClass("cur");
 					$("#list7box").addClass("show");
@@ -40,24 +40,24 @@
 			}else if(a == 10){
 					$(".menu_list a.list10").addClass("cur");
 					$("#list10box").addClass("show");
-					$("body").css("background","url(img/bg_list10box.jpg) no-repeat right center fixed")
-			}else{
-					$(".menu_list a.list6").addClass("cur");
-					$("#list6box").addClass("show");
-					$("body").css("background","url(img/bg_list6box.jpg) no-repeat right center fixed")
+					$("body").css("background","url(img/bg_list10box.jpg) no-repeat right center fixed");
+					$(".menu_cont_state").css("display","block");
 			}
 			
 
 		
 		$("#nav li.nav3 > a").css( "color","#fff000").css("background","#0b7d3a");
 		$(".menu_list a").click(function(){
+			if($(this).attr("class") != "list11"){
 			$(".menu_list a").removeClass("cur");
 			$(this).addClass("cur");
 			$(".menu_cont_box,.menu_cont_box_silder").css("display","none")
 			$("#"+$(this).attr("class").substring(0,5)+"box").css("display","block")
 			$("body").css("background","url(img/bg_"+$(this).attr("class").substring(0,5)+"box.jpg) no-repeat right center fixed")
 			$(".menu_cont_map,.menu_cont_state").css("display","none");
+			}
 		});
+		
 		$(".menu_list a.list10").click(function(){
 			$(".menu_list a").removeClass("cur");
 			$(this).addClass("cur");
@@ -71,6 +71,8 @@
 		});
 	});	
 </script>
+
+
 <style>
 body{background:url(img/bg_list6box.jpg) no-repeat right center fixed;}
 </style>
@@ -79,21 +81,47 @@ body{background:url(img/bg_list6box.jpg) no-repeat right center fixed;}
 <body>
 <div class="menu_cont_map">
     	<div class="cbox">
-        	<a class="sh" href="#"></a>
-        	<a class="hz" href="#"></a>
+        	<a class="sh"></a>
+        	<a class="hz"></a>
         </div>
 </div>
 
-<div class="menu_cont_state"><img src="img/map_st.png" width="735" height="917"  alt=""/>
+<div class="menu_cont_state">
+	<!--<img src="img/map_st.png" width="735" height="917"  alt=""/>-->
+
+<ul>
+	<h2>江苏<p><span>J</span>iangSu</p></h2>
+    <li><span>长江北 - 无锡市新区</span>无锡市新区长江北路280-286号哥伦布广场B1层</li>
+    <li><span>延陵(吾悦) - 常州市钟楼区</span>常州市延陵西路123号吾悦国际广场 B1层</li>
+    <li><span>工农南 - 南通市崇川区</span>南通市崇川区疏港路与工农路西北侧星耀城B1层</li>
+    <li><span>江阴澄江中 - 无锡市江阴市澄江街道</span>江阴市澄江中路87-89号新一城B1层</li>
+    <li><span>前进西 - 苏州昆山市玉山镇</span>昆山市前进西路祖冲之南路东北角</li>
+</ul>
+<ul>			
+	<h2>上海<p><span>S</span>hangHai</p></h2>
+    <li><span>田林东 - 上海市徐汇区</span>上海市田林东路55号汇阳广场B1层</li>
+    <li><span>国盛 - 上海市普陀区</span>上海市普陀区中江路大渡河路588号国盛中心1层</li>
+</ul>
+<ul>		
+	<h2>江苏<p><span>Z</span>heJiang</p></h2>
+    <li><span>下城凤起项目 - 杭州市下城区</span>凤起路442号浙江外经贸广场综合楼 B1层</li>
+    <li><span>上虞市民大道 - 绍兴市上虞区</span>上虞市市民大道621号金科时代潮城2层 </li>
+    <li><span>海盐勤俭 - 嘉兴市海盐市</span>嘉兴市海盐县勤俭南路165号2层</li>
+    <li><span>古墩2 - 杭州市西湖区</span>杭州市西湖区古墩路87号浙商财富中心B1层</li>
+    <li><span>南街 - 湖州市湖兴区</span>湖州市吴兴区南街558-590号银泰百货B1层</li>
+    <li><span>庆丰中 - 嘉兴市桐乡市</span>桐乡市庆丰中路8-16号太平洋百货2层</li>
+    <li><span>店口 - 绍兴诸暨市店口镇</span>诸暨中央路（海亮商务酒店）近胜利路</li>
+</ul>
 </div>
 
 <div class="menu_list">
-	<a class="list5" href="#">产业概述</a>
-    <a class="list6" href="#">农场介绍</a>
-    <a class="list7" href="#">食品加工</a>
-    <a class="list8" href="#">质量检测</a>
-    <a class="list9" href="#">物流配送</a>
-    <a class="list10" href="#">实体门店</a>
+	<a class="list5">产业概述</a>
+    <a class="list6">农场介绍</a>
+    <a class="list7">食品加工</a>
+    <a class="list8">质量检测</a>
+    <a class="list9">物流配送</a>
+    <a class="list10">实体门店</a>
+    <a class="list11">追溯</a>
 </div>
 <div id="list5box" class="menu_cont_box_silder">
 	<div class="map"></div>
@@ -143,14 +171,14 @@ body{background:url(img/bg_list6box.jpg) no-repeat right center fixed;}
 <div id="list7box" class="menu_cont_box">
 	<h5>我们自己的</h5>
     <h1>食品加工中心</h1>   
-	<h3>长三角食品加工农场 —— 金山农场</h3> 
+	<h3>长三角食品加工农场 —— 金山基地</h3> 
     <div class="dec">
-        <p>2013 年11 月1 日，海亮长三角有机食品加工农场（以下简称“金山农场”）开工奠基典礼在上海金山廊下镇隆重举行。截止2014 年6 月，项目工期已顺利过半，力保2014 年12 月1 日正式建成投产。明康汇加工农场拥有肉制品、果蔬、豆制品、烘焙等初、深加工产品区域，特设透明的中央厨房，是国内规模最大癿安全健康食品加工中心。</p>
+        <p>2013 年11 月1 日，海亮长三角有机食品加工农场（以下简称“金山基地”）开工奠基典礼在上海金山廊下镇隆重举行。截止2014 年6 月，项目工期已顺利过半，力保2014 年12 月1 日正式建成投产。明康汇加工农场拥有肉制品、果蔬、豆制品、烘焙等初、深加工产品区域，特设透明的中央厨房，是国内规模最大癿安全健康食品加工中心。</p>
         <p>上海地处中国漫长海岸线的中心，世界第三大河、亚洲第一大河——长江入海口以及长三角城市群龙头核心。金山区廊下镇农业资源丰富，被定位为上海市市级现代农业园区，区域面积为51 平方公里，实行镇与园区合一管理体制。</p>
         <div class="pic"><img src="img/menu_cont_box_pic_71.jpg" alt=""/></div>
         <p>海亮长三角有机食品加工农场选择落户上海金山廊下镇。目前，上海海亮有机食品供应链有限公司承担海亮健康食品集团“生产加工”职能，注册资本1 亿，总投资约16 亿，在上海金山廊下镇占地500 亩，按照“一次规划、分期建设”，分3 期建设成集研发、检测、办公、生产加工、仓储、配送等一体的综合产业园。</p>
-        <p>金山农场1期建设分为A、B、C三区，占地面积超10万平方米，总建筑面积超14万平方米。 农场A区主要为集团检测中心及职工宿舍等，占地面积超1.4万平方米，总建筑面积近1.9万平方米，于6月12日主体结构封顶，预计10月30日完工交付使用。 </p>
-        <p>金山农场B区位于桑叶港河东侧、荣春路南侧，主要为包装及配送中心，占地面积超4万平方米，总建筑面积超4.7万平方米，将于8月4日主体结构封顶，10月30日完工交付使用。 金山农场C区位于桑叶港河东侧、荣春路北侧，主要为加工车间及仓储等，占地面积超4.7万平方米，总建筑面积超7.5万平方米，将于7月15日主体结构封顶，10月30日完工交付使用。  </p>
+        <p>金山基地1期建设分为A、B、C三区，占地面积超10万平方米，总建筑面积超14万平方米。 农场A区主要为集团检测中心及职工宿舍等，占地面积超1.4万平方米，总建筑面积近1.9万平方米，于6月12日主体结构封顶，预计10月30日完工交付使用。 </p>
+        <p>金山基地B区位于桑叶港河东侧、荣春路南侧，主要为包装及配送中心，占地面积超4万平方米，总建筑面积超4.7万平方米，将于8月4日主体结构封顶，10月30日完工交付使用。 金山基地C区位于桑叶港河东侧、荣春路北侧，主要为加工车间及仓储等，占地面积超4.7万平方米，总建筑面积超7.5万平方米，将于7月15日主体结构封顶，10月30日完工交付使用。  </p>
     </div>
 </div>
 
@@ -160,7 +188,7 @@ body{background:url(img/bg_list6box.jpg) no-repeat right center fixed;}
 	<h3>全产品链质量管理体系</h3> 
     <div class="dec">
         <p>明康汇，建立从农场到餐桌的全产品链质量管理体系，全方位保障食品安全与品质。
-明康汇金山农场总投资1.5亿，将建立面积约5000平米的国家级检测中心，引入先进的检测设备，为产品的质量安全提供强大的支撑。通过高于国家标准的苛刻的质量标准体系对原料、种植、生产、加工、运输、销售等环节都进行严格的检测控制。</p>
+明康汇金山基地总投资2亿，将建立面积约5000平米的国家级检测中心，引入先进的检测设备，为产品的质量安全提供强大的支撑。通过高于国家标准的苛刻的质量标准体系对原料、种植、生产、加工、运输、销售等环节都进行严格的检测控制。</p>
         <p style="font-weight:bold;">明康汇的质量方针：安全安心、健康美味、服务极致、顾客满意！</p>
     </div>
     <h3>明康汇的质量管理基本准则</h3>

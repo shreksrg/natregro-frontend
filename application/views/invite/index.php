@@ -21,10 +21,7 @@ CView::show('layout/invite', array('selIndex' => 0));
 ?>
 
 <div class="jobs_list">
-    <div class="jobs_list_tab jobs_list_tab_1"><a id="inviteTag" href="hr_jobs2.html"><img
-                src="<?= WEB_PATH ?>/public/img/btn_jobs_listtab.png"
-                width="200"
-                height="73" alt=""/></a></div>
+    <div class="jobs_list_tab jobs_list_tab_1"><a id="inviteTag" href="hr_jobs2.html"></a></div>
     <div class="search">
         <!--    	<div class="btn_jobsearh"><a href="#"><img src="img/btn_jobs_search.png" width="128" height="41" alt=""/></a></div>
                 <select class="input_jobsearch">
@@ -45,11 +42,11 @@ CView::show('layout/invite', array('selIndex' => 0));
             </tr>
             </thead>
             <tbody>
-           <!-- <tr>
+            <!-- <tr>
                 <td>SAPFICO高级顾问</td>
                 <td>人力资源部</td>
                 <td>上海市普陀区市</td>
-                <td><a href="<?/*= APP_URL */?>/invite/show">立即申请</a></td>
+                <td><a href="<? /*= APP_URL */ ?>/invite/show">立即申请</a></td>
             </tr>-->
             </tbody>
         </table>

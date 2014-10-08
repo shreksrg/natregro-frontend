@@ -66,4 +66,36 @@ class Invite extends FrontController
         $contact = $modelNews->page($catIds);
         CView::show('invite/contact', array('contact' => $contact));
     }
+
+    /**
+     * 简历投递
+     */
+    public function resume()
+    {
+        if (REQUEST_METHOD == 'POST') {
+            Micro::import('application.libraries.uploader.*');
+            $fieldName = 'attachment'; //表单文件域
+            $jobId = (int)$this->input->post('job_id');
+            if ($jobId > 0) {
+                $row = $this->_modelInvite->detail($jobId);
+                if (!$row) {
+                    echo 'job is not exists';
+                    return false;
+                }
+                $uploader = new ResumeUploader($fieldName);
+                $uploader->initFile();
+                $return = $uploader->upload();
+                if (!$return) {
+                    echo 'submit fail';
+                    return false;
+                }
+                $files = $uploader->getTargetFiles();
+                $data = array('jobId' => $jobId, 'attachment' => $files[$fieldName]);
+                $this->_modelInvite->appendResume($data);
+                echo 'submit completed ,thank you!';
+            } else return false;
+        } else {
+            CView::show('invite/resume');
+        }
+    }
 }

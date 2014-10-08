@@ -26,6 +26,7 @@
                 <li><a href="<?= APP_URL ?>/news/chain?tag=8">质量检测</a></li>
                 <li><a href="<?= APP_URL ?>/news/chain?tag=9">物流配送</a></li>
                 <li><a href="<?= APP_URL ?>/news/chain?tag=10">实体门店</a></li>
+                <li><a href="#">追溯</a></li>
             </ul>
         </li>
         <li class="nav1"><a href="<?= APP_URL ?>/product">自产生鲜</a></li>

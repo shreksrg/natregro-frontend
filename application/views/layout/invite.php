@@ -5,7 +5,7 @@
     <a href="<?= APP_URL ?>/invite/train?r=list">员工发展与培养</a>
     <a href="<?= APP_URL ?>/invite/contact">联系我们</a>
 
-    <?php if (isset($data)) echo $data ?>
+
 </div>
 
 <script>

@@ -1,13 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-<title>明康汇</title>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<script src="js/jquery.min.js"></script>
-</head>
+<?php
+$header['page_title'] = CLang::page()->title('home');
+CView::show('layout/header', $header);
+?>
+
+<style>
+    ::-webkit-scrollbar/*整体部分*/
+{
+        width: 10px;
+        height:10px;
+    }
+
+    ::-webkit-scrollbar-track/*滑动轨道*/
+{
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 0px;
+        background: rgba(0,0,0,0.8);
+        opacity:0.2;
+    }
+
+    ::-webkit-scrollbar-thumb/*滑块*/
+{
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: #ffed29;
+    }
+
+    ::-webkit-scrollbar-thumb:hover/*滑块效果*/
+{
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.4);
+    }
+</style>
 
 <body>
 <div id="heath_travel_wrapper">
@@ -24,19 +48,21 @@
 	</div>
 </div>
 <div class="stepbar">
-	<a id="tabar1" class="step_icon1 cur"></a>
-	<a id="tabar2" class="step_icon2"></a>
-	<a id="tabar3" class="step_icon3"></a>
-	<a id="tabar4" class="step_icon4"></a>
-	<a id="tabar5" class="step_icon5"></a>
+    <a id="tabar1" class="step_icon1 cur"></a>
+    <a id="tabar2" class="step_icon2"></a>
+    <a id="tabar3" class="step_icon3"></a>
+    <a id="tabar4" class="step_icon4"></a>
+    <a id="tabar5" class="step_icon5"></a>
 </div>
 
 <div class="toprev fadeout"></div>
 <div class="tonext"></div>
-<a class="more_story" href="brand_story.html">更多品牌故事</a>
+<a class="more_story" href="<?=APP_URL?>/product">更多品牌故事</a>
 
-<script src="js/header.js"></script>
-<script src="js/footer.js"></script>
+<?php
+CView::show('layout/menu');
+CView::show('layout/footer');
+?>
 
 
 <script language="javascript" type="text/javascript">
@@ -48,39 +74,40 @@
 			}
 			//获取参数
 			var a=GetQueryString("page");
-			$("#heath_travel_page div.page1").css("background","url(img/brand_story_"+a+"_bg1.jpg) no-repeat").css("background-size","100% 100%")
-			$("#heath_travel_page div.page2").css("background","url(img/brand_story_"+a+"_bg2.jpg) no-repeat").css("background-size","100% 100%")
-			$("#heath_travel_page div.page3").css("background","url(img/brand_story_"+a+"_bg3.jpg) no-repeat").css("background-size","100% 100%")
-			$("#heath_travel_page div.page4").css("background","url(img/brand_story_"+a+"_bg4.jpg) no-repeat").css("background-size","100% 100%")
-			$("#heath_travel_page div.page5").css("background","url(img/brand_story_"+a+"_bg5.jpg) no-repeat").css("background-size","100% 100%")
-			
-			var tabarText;
-			if(a == "zl"){
-				tabarText = "概述-品种-专家-养殖-质控"
-			}else if(a == "ji"){
-				tabarText = "概述-育种-安全-饲养-质保"
-			}else if(a == "sc"){
-				tabarText = "概述-专家-农场-安全-生长"
-			}else if(a == "yu"){
-				tabarText = "概述-专家-饲养-优势-渔场"
-			}else if(a == "dy"){
-				tabarText = "概述-安全-生长-质控-展示"
-			}else if(a == "df"){
-				tabarText = "概述-安全-原料-工艺-展示"
-			}else if(a == "xe"){
-				tabarText = "概述-简介-专家-苗种-展示"
-			}else if(a == "ss"){
-				tabarText = "概述-简介-制作-工艺-展示"
-			}else if(a == "hb"){
-				tabarText = "概述-简介-专家-原料-安全"
-			}else if(a == "wc"){
-				tabarText = "概述-选品-牛肉-鳕鱼-蜂蜜"
-			}
-			$("#tabar1").append(tabarText.substring(0,2))
-			$("#tabar2").append(tabarText.substring(3,5))
-			$("#tabar3").append(tabarText.substring(6,8))
-			$("#tabar4").append(tabarText.substring(9,11))
-			$("#tabar5").append(tabarText.substring(12,14))
+			$("#heath_travel_page div.page1").css("background","url(<?=WEB_PATH?>/public/img/brand_story_"+a+"_bg1.jpg) no-repeat").css("background-size","100% 100%")
+			$("#heath_travel_page div.page2").css("background","url(<?=WEB_PATH?>/public/img/brand_story_"+a+"_bg2.jpg) no-repeat").css("background-size","100% 100%")
+			$("#heath_travel_page div.page3").css("background","url(<?=WEB_PATH?>/public/img/brand_story_"+a+"_bg3.jpg) no-repeat").css("background-size","100% 100%")
+			$("#heath_travel_page div.page4").css("background","url(<?=WEB_PATH?>/public/img/brand_story_"+a+"_bg4.jpg) no-repeat").css("background-size","100% 100%")
+			$("#heath_travel_page div.page5").css("background","url(<?=WEB_PATH?>/public/img/brand_story_"+a+"_bg5.jpg) no-repeat").css("background-size","100% 100%")
+
+            var tabarText;
+            if(a == "zl"){
+                tabarText = "概述-品种-专家-养殖-质控"
+            }else if(a == "ji"){
+                tabarText = "概述-育种-安全-饲养-质保"
+            }else if(a == "sc"){
+                tabarText = "概述-专家-农场-安全-生长"
+            }else if(a == "yu"){
+                tabarText = "概述-专家-饲养-优势-渔场"
+            }else if(a == "dy"){
+                tabarText = "概述-安全-生长-质控-展示"
+            }else if(a == "df"){
+                tabarText = "概述-安全-原料-工艺-展示"
+            }else if(a == "xe"){
+                tabarText = "概述-简介-专家-苗种-展示"
+            }else if(a == "ss"){
+                tabarText = "概述-简介-制作-工艺-展示"
+            }else if(a == "hb"){
+                tabarText = "概述-简介-专家-原料-安全"
+            }else if(a == "wc"){
+                tabarText = "概述-选品-牛肉-鳕鱼-蜂蜜"
+            }
+            $("#tabar1").append(tabarText.substring(0,2))
+            $("#tabar2").append(tabarText.substring(3,5))
+            $("#tabar3").append(tabarText.substring(6,8))
+            $("#tabar4").append(tabarText.substring(9,11))
+            $("#tabar5").append(tabarText.substring(12,14))
+
 
 var apDiv1 = document.getElementById("heath_travel_wrapper");
 var perWidth = apDiv1.clientWidth / 2;
@@ -166,42 +193,6 @@ if(window.addEventListener){
 				$(".more_story").removeClass("show")
 			}
     	}
-		
-		$(".stepbar a.step_icon1").click(function(){
-			$("#heath_travel_wrapper").animate({scrollLeft:apDiv1.clientWidth * 0},'slow');
-		});
-		$(".stepbar a.step_icon2").click(function(){
-			$("#heath_travel_wrapper").animate({scrollLeft:apDiv1.clientWidth * 1},'slow');
-		});
-		$(".stepbar a.step_icon3").click(function(){
-			$("#heath_travel_wrapper").animate({scrollLeft:apDiv1.clientWidth * 2},'slow');
-		});
-		$(".stepbar a.step_icon4").click(function(){
-			$("#heath_travel_wrapper").animate({scrollLeft:apDiv1.clientWidth * 3},'slow');
-		});
-		$(".stepbar a.step_icon5").click(function(){
-			$("#heath_travel_wrapper").animate({scrollLeft:apDiv1.clientWidth * 4},'slow');
-		});
-		
-		$("#heath_travel_wrapper").scroll(function () {
-                var scrolled = $(this).scrollLeft();
-				if(scrolled >= apDiv1.clientWidth * 0 && scrolled < apDiv1.clientWidth * 1){
-					$(".stepbar a").removeClass("cur");
-					$(".stepbar a.step_icon1").addClass("cur");
-				}else if(scrolled >= apDiv1.clientWidth * 1 && scrolled < apDiv1.clientWidth * 2){
-					$(".stepbar a").removeClass("cur");
-					$(".stepbar a.step_icon2").addClass("cur");
-				}else if(scrolled >= apDiv1.clientWidth * 2 && scrolled < apDiv1.clientWidth * 3){
-					$(".stepbar a").removeClass("cur");
-					$(".stepbar a.step_icon3").addClass("cur");
-				}else if(scrolled >= apDiv1.clientWidth * 3 && scrolled < apDiv1.clientWidth * 4){
-					$(".stepbar a").removeClass("cur");
-					$(".stepbar a.step_icon4").addClass("cur");
-				}else if(scrolled >= apDiv1.clientWidth * 4 && scrolled < apDiv1.clientWidth * 5){
-					$(".stepbar a").removeClass("cur");
-					$(".stepbar a.step_icon5").addClass("cur");
-				}
-		});
 		
 	});	
 </script>

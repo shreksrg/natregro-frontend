@@ -35,6 +35,19 @@ class Invite_model extends App_model
         $query = $this->db->query($sql);
         return $query->row_array();
     }
+
+    /**
+     * 新增简历
+     */
+    public function appendResume($data)
+    {
+        $value = array(
+            'job_id' => $data['jobId'],
+            'attachment' => $data['attachment'],
+            'create_time' => time(),
+        );
+        return $this->db->insert('nato_jobs_attachment', $value);
+    }
 }
 
 
